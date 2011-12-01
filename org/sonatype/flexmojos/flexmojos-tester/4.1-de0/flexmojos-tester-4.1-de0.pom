@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.sonatype.flexmojos</groupId>
+    <artifactId>flexmojos-testing</artifactId>
+    <version>4.1-de0</version>
+  </parent>
+
+  <artifactId>flexmojos-tester</artifactId>
+  <name>Flexmojos Tester api</name>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.plexus</groupId>
+        <artifactId>plexus-component-metadata</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>com.savage7.maven.plugins</groupId>
+        <artifactId>maven-external-dependency-plugin</artifactId>
+      </plugin>
+      <!--<plugin>-->
+        <!--<groupId>org.apache.maven.plugins</groupId>-->
+        <!--<artifactId>maven-dependency-plugin</artifactId>-->
+        <!--<executions>-->
+          <!--<execution>-->
+            <!--<phase>process-test-classes</phase>-->
+            <!--<goals>-->
+              <!--<goal>copy</goal>-->
+            <!--</goals>-->
+            <!--<configuration>-->
+              <!--<outputDirectory>${project.build.directory}/flashplayer</outputDirectory>-->
+              <!--<stripVersion>true</stripVersion>-->
+              <!--<artifactItems>-->
+                <!--&lt;!&ndash;<artifactItem>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<groupId>com.adobe</groupId>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<artifactId>flashplayer</artifactId>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<version>10.2</version>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<type>exe</type>&ndash;&gt;-->
+                <!--&lt;!&ndash;</artifactItem>&ndash;&gt;-->
+                <!--&lt;!&ndash;<artifactItem>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<groupId>com.adobe</groupId>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<artifactId>flashplayer</artifactId>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<version>10.2</version>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<classifier>linux</classifier>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<type>uexe</type>&ndash;&gt;-->
+                <!--&lt;!&ndash;</artifactItem>&ndash;&gt;-->
+              <!--</artifactItems>-->
+            <!--</configuration>-->
+          <!--</execution>-->
+        <!--</executions>-->
+      <!--</plugin>-->
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.sonatype.sisu.inject</groupId>
+      <artifactId>guice-plexus-shim</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <classifier>jdk15</classifier>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-library</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>flexmojos-util</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>
