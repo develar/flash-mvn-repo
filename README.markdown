@@ -1,3 +1,5 @@
+Pull requests are welcome.
+
 # Add repository
     <repositories>
       <repository>
