@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.osflash</groupId>
+  <artifactId>as3-signals</artifactId>
+  <versioning>
+    <release>0.9-beta</release>
+    <versions>
+      <version>0.9-beta</version>
+    </versions>
+    <lastUpdated>20111211085403</lastUpdated>
+  </versioning>
+</metadata>
