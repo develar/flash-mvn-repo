@@ -37,7 +37,7 @@ public class UDI {
 
     for (File dir : dirs) {
       out.append("\n\t<tr><td><a href=\"").append(dir.getName()).append("\">").append(dir.getName()).append("/</a></td></tr>");
-      build(dir, relativePath + dir.getName());
+      build(dir, (relativePath.equals("/") ? "" : relativePath + "/") + dir.getName());
     }
 
     out.append("</table></body></html>");
