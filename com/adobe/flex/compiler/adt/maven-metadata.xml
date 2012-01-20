@@ -3,10 +3,11 @@
   <groupId>com.adobe.flex.compiler</groupId>
   <artifactId>adt</artifactId>
   <versioning>
-    <release>3.1.0.4880</release>
+    <release>2.6.0.19120</release>
     <versions>
       <version>3.1.0.4880</version>
+      <version>2.6.0.19120</version>
     </versions>
-    <lastUpdated>20120116124707</lastUpdated>
+    <lastUpdated>20120120100301</lastUpdated>
   </versioning>
 </metadata>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <plugins>
+    <plugin>
+      <name>idea-flexmojos-maven-plugin</name>
+      <prefix>idea-flexmojos</prefix>
+      <artifactId>idea-flexmojos-maven-plugin</artifactId>
+    </plugin>
+  </plugins>
+</metadata>
