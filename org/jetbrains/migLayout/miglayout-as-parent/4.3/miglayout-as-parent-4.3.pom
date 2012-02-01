@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.flyti</groupId>
+    <artifactId>flash-forge</artifactId>
+    <version>27</version>
+  </parent>
+
+  <groupId>org.jetbrains.miglayout</groupId>
+  <artifactId>miglayout-as-parent</artifactId>
+  <version>4.3</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>core</module>
+    <module>flash</module>
+    <module>flex</module>
+    <module>demo</module>
+  </modules>
+
+  <repositories>
+    <repository>
+      <id>flash-mvn-repo</id>
+      <url>http://develar.github.com/flash-mvn-repo/</url>
+    </repository>
+  </repositories>
+
+  <scm>
+    <connection>scm:git:file://localhost/${project.basedir}</connection>
+  </scm>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.adobe.flex.framework</groupId>
+      <artifactId>playerglobal</artifactId>
+      <type>swc</type>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+</project>
