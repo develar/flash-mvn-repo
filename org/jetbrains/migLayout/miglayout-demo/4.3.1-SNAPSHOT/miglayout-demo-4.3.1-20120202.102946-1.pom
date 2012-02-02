@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.jetbrains.miglayout</groupId>
+    <artifactId>miglayout-as-parent</artifactId>
+    <version>4.3.1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>miglayout-demo</artifactId>
+  <packaging>swf</packaging>
+
+  <properties>
+      <fdk.version>4.6.0.23201</fdk.version>
+      <flex.sdk.version>4.6.0.23201</flex.sdk.version>
+    </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jetbrains.miglayout</groupId>
+      <artifactId>miglayout-flash</artifactId>
+      <version>4.3.1-SNAPSHOT</version>
+      <type>swc</type>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.miglayout</groupId>
+      <artifactId>miglayout-flex</artifactId>
+      <version>4.3.1-SNAPSHOT</version>
+      <type>swc</type>
+    </dependency>
+    <dependency>
+      <groupId>com.bit101</groupId>
+      <artifactId>minimalcomps</artifactId>
+      <version>0.9.10</version>
+      <type>swc</type>
+    </dependency>
+
+    <dependency>
+      <groupId>com.adobe.flex.framework</groupId>
+      <artifactId>flex-framework-small</artifactId>
+      <type>pom</type>
+      <version>4.6.0.23201</version>
+    </dependency>
+    <dependency>
+      <groupId>com.adobe.flex.framework</groupId>
+      <artifactId>textLayout</artifactId>
+      <type>swc</type>
+      <version>4.6.0.23201</version>
+    </dependency>
+    <dependency>
+      <groupId>com.adobe.flex.framework</groupId>
+      <artifactId>textLayout</artifactId>
+      <type>rb.swc</type>
+      <classifier>en_US</classifier>
+      <version>4.6.0.23201</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.sonatype.flexmojos</groupId>
+        <artifactId>flexmojos-maven-plugin</artifactId>
+        <configuration>
+          <targetPlayer>11</targetPlayer>
+          <swfVersion>13</swfVersion>
+          <fixedLiteralVector>false</fixedLiteralVector>
+          <debug>true</debug>
+          <sourceFile>org/jetbrains/migLayout/demo/FlexDemo.mxml</sourceFile>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
