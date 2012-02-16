@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <name>Super POMs for Flex/AIR</name>
+  <groupId>org.flyti.superPOMs</groupId>
+  <artifactId>superPoms</artifactId>
+  <version>33</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <flash-forge.version>28</flash-forge.version>
+    <java-forge.version>6</java-forge.version>
+  </properties>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>${basedir}/src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.5</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>resources</goal>
+            </goals>
+            <configuration>
+              <escapeString>\</escapeString>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>attach-artifact-maven-plugin</artifactId>
+        <version>1.0</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>attach-artifact</goal>
+            </goals>
+            <configuration>
+              <artifacts>
+                <artifact>
+                  <file>${project.build.outputDirectory}/common.pom</file>
+                  <artifactId>common</artifactId>
+                  <type>pom</type>
+                </artifact>
+                <artifact>
+                  <file>${project.build.outputDirectory}/flash-forge.pom</file>
+                  <groupId>org.flyti</groupId>
+                  <artifactId>flash-forge</artifactId>
+                  <version>${flash-forge.version}</version>
+                  <type>pom</type>
+                </artifact>
+                <artifact>
+                  <file>${project.build.outputDirectory}/java-forge.pom</file>
+                  <groupId>org.flyti</groupId>
+                  <artifactId>java-forge</artifactId>
+                  <version>${java-forge.version}</version>
+                  <type>pom</type>
+                </artifact>
+              </artifacts>
+              <updatePom>false</updatePom>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <scm>
+    <connection>scm:git:file://localhost/${project.basedir}</connection>
+  </scm>
+
+  <distributionManagement>
+    <repository>
+      <id>flash-mvn-repo</id>
+      <url>file:///Users/develar/flash-mvn-repo</url>
+    </repository>
+  </distributionManagement>
+</project>
