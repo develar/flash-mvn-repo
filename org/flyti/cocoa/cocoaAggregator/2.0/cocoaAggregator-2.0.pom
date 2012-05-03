@@ -1,0 +1,94 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.flyti</groupId>
+    <artifactId>flash-forge</artifactId>
+    <version>27</version>
+  </parent>
+
+  <name>Cocoa Aggregator</name>
+  <groupId>org.flyti.cocoa</groupId>
+  <artifactId>cocoaAggregator</artifactId>
+  <version>2.0</version>
+  <packaging>pom</packaging>
+
+  <modules>
+
+    <module>asset-builder-maven-plugin</module>
+    <!--<module>laf-compiler-ext</module>-->
+    <module>appkit</module>
+    <module>acocoa</module>
+    <module>aquaLaFAssetBuilder</module>
+    <module>aquaLaF</module>
+    <module>demo</module>
+  </modules>
+
+  <profiles>
+    <profile>
+      <id>allP</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <modules>
+        <module>foundation</module>
+        <module>collections</module>
+      </modules>
+    </profile>
+  </profiles>
+
+  <scm>
+    <connection>scm:git:git://github.com/develar/flash-cocoa.git</connection>
+    <url>http://github.com/develar/flash-cocoa</url>
+  </scm>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.flyti</groupId>
+        <artifactId>foundation</artifactId>
+        <version>1.2.7</version>
+        <type>swc</type>
+      </dependency>
+      <dependency>
+        <groupId>com.adobe.flex.framework</groupId>
+        <artifactId>air-framework</artifactId>
+        <version>${fdk.version}</version>
+        <type>pom</type>
+        <exclusions>
+          <exclusion>
+            <groupId>com.adobe.flex.framework</groupId>
+            <artifactId>osmf</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>com.adobe.flex.framework</groupId>
+            <artifactId>rpc</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>com.adobe.flex.framework</groupId>
+        <artifactId>flex-framework</artifactId>
+        <version>${fdk.version}</version>
+        <type>pom</type>
+        <exclusions>
+          <exclusion>
+            <groupId>com.adobe.flex.framework</groupId>
+            <artifactId>osmf</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>com.adobe.flex.framework</groupId>
+            <artifactId>rpc</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <repositories>
+    <repository>
+      <id>flash-mvn-repo</id>
+      <url>http://develar.github.com/flash-mvn-repo/</url>
+    </repository>
+  </repositories>
+</project>

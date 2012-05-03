@@ -6,5 +6,10 @@
       <prefix>flex-sdk-publisher</prefix>
       <artifactId>flex-sdk-publisher-maven-plugin</artifactId>
     </plugin>
+    <plugin>
+      <name>Asset Builder Maven Plugin</name>
+      <prefix>asset-builder</prefix>
+      <artifactId>asset-builder-maven-plugin</artifactId>
+    </plugin>
   </plugins>
 </metadata>
